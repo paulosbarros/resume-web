@@ -1,0 +1,13 @@
+name: Trigger CI Workflow
+
+on:
+  push:
+    branches:
+      - feature-*
+
+jobs:
+  trigger-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Acionar CD workflow no web-workflow
+        uses: paulosbarros/web-workflow/.github/workflows/ci-workflow.yml@v1

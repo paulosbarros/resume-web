@@ -1,0 +1,13 @@
+name: Trigger CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-cd:
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Acionar CD workflow no web-workflow
+        uses: paulosbarros/web-workflow/.github/workflows/cd-workflow.yml@v1
